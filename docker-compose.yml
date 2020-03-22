@@ -1,0 +1,7 @@
+version: "3"
+services:
+  todo-app-ui:
+    build: .
+    image: todo-app-ui:latest
+    ports:
+      - "8080:80"
