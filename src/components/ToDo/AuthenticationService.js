@@ -11,3 +11,9 @@ export const isUserLoggedIn = () => {
 	if (user !== null) return true;
 	return false;
 };
+
+export const getLoggedInUser = () => {
+	let user = sessionStorage.getItem("authenticatedUser");
+	if (user === null) return "";
+	return user;
+};

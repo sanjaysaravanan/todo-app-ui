@@ -1,26 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { retrieveAllTodos } from "../../api/todo/ToDoDataService";
+import { getLoggedInUser } from "./AuthenticationService";
 
 function ListToDo() {
-	const [todos, setTodos] = useState([
-		{
-			id: 1,
-			description: "Learn Spring MVC",
-			isDone: false,
-			targetDate: new Date()
-		},
-		{
-			id: 2,
-			description: "Learn Kubernetes",
-			isDone: false,
-			targetDate: new Date()
-		},
-		{
-			id: 3,
-			description: "Visit Austin Texas",
-			isDone: false,
-			targetDate: new Date()
-		}
-	]);
+	const [todos, setTodos] = useState([]);
+
+	useEffect(() => {
+		let userName = getLoggedInUser();
+		console.log(userName);
+		retrieveAllTodos(userName)
+			.then(res => setTodos(res.data))
+			.catch(error => console.log(error));
+	}, []);
 
 	return (
 		<div>
@@ -29,7 +20,6 @@ function ListToDo() {
 				<table className="table">
 					<thead>
 						<tr>
-							<th>Id</th>
 							<th>Description</th>
 							<th>Target Date</th>
 							<th>Completed</th>
@@ -38,10 +28,9 @@ function ListToDo() {
 					<tbody>
 						{todos.map(todo => (
 							<tr key={todo.id}>
-								<td>{todo.id}</td>
 								<td>{todo.description}</td>
 								<td>{todo.targetDate.toString()}</td>
-								<td>{todo.isDone.toString()}</td>
+								<td>{todo.done.toString()}</td>
 							</tr>
 						))}
 					</tbody>
