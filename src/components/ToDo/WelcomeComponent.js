@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-	HelloService,
-	HelloBeanService,
-	HelloBeanPathService
-} from "../../api/todo/HelloWorldService";
+import { HelloBeanPathService } from "../../api/todo/HelloWorldService";
 
 export default function WelcomeComponent(props) {
 	const [message, setMessage] = useState("");

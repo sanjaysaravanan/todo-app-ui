@@ -9,6 +9,7 @@ import ListToDo from "./ListToDo";
 import WelcomeComponent from "./WelcomeComponent";
 import FooterComponent from "./FooterComponent";
 import ErrorComponent from "./ErrorComponent";
+import ToDoComponent from "./ToDoComponent";
 
 export default function() {
 	return (
@@ -23,7 +24,12 @@ export default function() {
 						path="/welcome/:name"
 						component={WelcomeComponent}
 					/>
-					<AuthenticatedRoute path="/todos" component={ListToDo} />
+					<AuthenticatedRoute exact path="/todos" component={ListToDo} />
+					<AuthenticatedRoute
+						exact
+						path="/todos/:id"
+						component={ToDoComponent}
+					/>
 					<Route path="" component={ErrorComponent} />
 				</Switch>
 				<FooterComponent />
