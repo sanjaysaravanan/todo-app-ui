@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { registerSuccess } from "./AuthenticationService";
 
 function LoginComponent() {
-	const [userName, setUserName] = useState("SanjaySaravanan");
+	const [userName, setUserName] = useState("sanjaysaravanan");
 	const [password, setPassword] = useState("");
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [hasLoginFailed, setHasLoginFailed] = useState(false);
@@ -20,7 +20,7 @@ function LoginComponent() {
 	};
 
 	const loginClicked = () => {
-		if (userName === "SanjaySaravanan" && password === "password") {
+		if (userName === "sanjaysaravanan" && password === "password") {
 			setIsLoggedIn(true);
 			registerSuccess(userName, password);
 			setHasLoginFailed(false);

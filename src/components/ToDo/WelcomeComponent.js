@@ -7,12 +7,20 @@ export default function WelcomeComponent(props) {
 
 	const retrieveWelcomeMessage = () => {
 		HelloBeanPathService(props.match.params.name)
-			.then(res => setMessage(res.data.message))
+			.then(res => setMessage(res.message))
 			.catch(error => handleError(error));
 	};
 
 	const handleError = error => {
-		setMessage(error.response.data.message);
+		let errorMessage = "";
+
+		if (error.message) errorMessage += error.message;
+
+		if (error.response && error.response.data) {
+			errorMessage += error.response.data.message;
+		}
+
+		setMessage(errorMessage);
 	};
 
 	return (

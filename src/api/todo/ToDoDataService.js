@@ -1,21 +1,21 @@
-import axios from "axios";
+import { userInstance } from "../../axios.config";
 
 export const retrieveAllTodos = name => {
-	return axios.get(`http://localhost:8080/users/${name}/todos`);
+	return userInstance.get(`/api/users/${name}/todos`);
 };
 
 export const deleteTodo = (name, id) => {
-	return axios.delete(`http://localhost:8080/users/${name}/todos/${id}`);
+	return userInstance.delete(`/api/users/${name}/todos/${id}`);
 };
 
 export const getTodoById = (name, id) => {
-	return axios.get(`http://localhost:8080/users/${name}/todos/${id}`);
+	return userInstance.get(`/api/users/${name}/todos/${id}`);
 };
 
 export const updateTodo = (name, id, todo) => {
-	return axios.put(`http://localhost:8080/users/${name}/todos/${id}`, todo);
+	return userInstance.put(`/api/users/${name}/todos/${id}`, todo);
 };
 
 export const createTodo = (name, todo) => {
-	return axios.post(`http://localhost:8080/users/${name}/todos`, todo);
+	return userInstance.post(`/api/users/${name}/todos`, todo);
 };

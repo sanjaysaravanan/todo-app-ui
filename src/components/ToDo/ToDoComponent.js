@@ -30,7 +30,10 @@ export default function ToDoComponent(props) {
 		let userName = getLoggedInUser();
 		if (id === "-1") {
 			return;
-		} else getTodoById(userName, id).then(res => setStateFromApi(res.data));
+		} else
+			getTodoById(userName, id).then(res => {
+				setStateFromApi(res);
+			});
 	}, [id]);
 
 	const todo = (values, userName) => {
@@ -48,7 +51,7 @@ export default function ToDoComponent(props) {
 		if (id === "-1") {
 			createTodo(userName, todo(values, userName));
 		} else updateTodo(userName, id, todo(values, userName));
-		history.push("/todos");
+		history.goBack();
 	};
 
 	const validate = values => {

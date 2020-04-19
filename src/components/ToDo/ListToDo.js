@@ -17,7 +17,7 @@ function ListToDo() {
 	const refreshTodos = () => {
 		let userName = getLoggedInUser();
 		retrieveAllTodos(userName)
-			.then(res => setTodos(res.data))
+			.then(res => setTodos(res))
 			.catch(error => console.log(error));
 	};
 
