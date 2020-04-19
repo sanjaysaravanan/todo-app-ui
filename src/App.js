@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import ToDoApp from "./components/ToDo/ToDoApp";
+
+import ToDoApp from "../src/pages/ToDoApp/ToDoApp";
 
 function App() {
 	return (

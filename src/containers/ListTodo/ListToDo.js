@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { retrieveAllTodos, deleteTodo } from "../../api/todo/ToDoDataService";
-import { getLoggedInUser } from "./AuthenticationService";
+
 import { Link, useHistory } from "react-router-dom";
 import moment from "moment";
+
+import { retrieveAllTodos, deleteTodo } from "../../api/todo/ToDoDataService";
+import { getLoggedInUser } from "../../components/AuthenticatedRoute/AuthenticationService";
 
 function ListToDo() {
 	const [todos, setTodos] = useState([]);

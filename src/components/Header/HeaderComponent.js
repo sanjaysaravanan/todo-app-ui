@@ -1,7 +1,10 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
-import { logoutUser, isUserLoggedIn } from "./AuthenticationService";
+import {
+	logoutUser,
+	isUserLoggedIn
+} from "../AuthenticatedRoute/AuthenticationService";
 
 function HeaderComponent() {
 	const isLoggedIn = isUserLoggedIn();

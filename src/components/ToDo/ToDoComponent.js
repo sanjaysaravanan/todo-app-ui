@@ -8,7 +8,7 @@ import {
 	updateTodo,
 	createTodo
 } from "../../api/todo/ToDoDataService";
-import { getLoggedInUser } from "./AuthenticationService";
+import { getLoggedInUser } from "../AuthenticatedRoute/AuthenticationService";
 
 export default function ToDoComponent(props) {
 	const [id, setId] = useState(props.match.params.id);

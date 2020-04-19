@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-import { registerSuccess } from "./AuthenticationService";
+import { registerSuccess } from "../AuthenticatedRoute/AuthenticationService";
 
 function LoginComponent() {
 	const [userName, setUserName] = useState("sanjaysaravanan");

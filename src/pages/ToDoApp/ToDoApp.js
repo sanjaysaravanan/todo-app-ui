@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HeaderComponent from "./HeaderComponent";
-import AuthenticatedRoute from "./AuthenticatedRoute";
-import LoginComponent from "./LoginComponent";
-import LogoutComponent from "./LogoutComponent";
-import ListToDo from "./ListToDo";
-import WelcomeComponent from "./WelcomeComponent";
-import FooterComponent from "./FooterComponent";
-import ErrorComponent from "./ErrorComponent";
-import ToDoComponent from "./ToDoComponent";
+import HeaderComponent from "../../components/Header/HeaderComponent";
+import AuthenticatedRoute from "../../components/AuthenticatedRoute/AuthenticatedRoute";
+import LoginComponent from "../../components/Login/LoginComponent";
+import LogoutComponent from "../../components/Logout/LogoutComponent";
+import ListToDo from "../../containers/ListTodo/ListToDo";
+import WelcomeComponent from "../../components/Welcome/WelcomeComponent";
+import FooterComponent from "../../components/Footer/FooterComponent";
+import ErrorComponent from "../../components/AuthenticatedRoute/ErrorComponent";
+import ToDoComponent from "../../components/ToDo/ToDoComponent";
 
 export default function() {
 	return (
