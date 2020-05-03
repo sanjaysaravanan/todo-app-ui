@@ -10,7 +10,8 @@ import {
 	Instagram,
 	Facebook,
 	Twitter,
-	LinkedIn
+	LinkedIn,
+	GitHub
 } from "@material-ui/icons";
 
 const useStyles = makeStyles(theme => ({
@@ -95,6 +96,13 @@ export default function() {
 									target="_blank"
 								>
 									<LinkedIn />
+								</Link>
+								<Link
+									color="inherit"
+									href="https://github.com/sanjaysaravanan"
+									target="_blank"
+								>
+									<GitHub />
 								</Link>
 								<Link
 									color="inherit"
