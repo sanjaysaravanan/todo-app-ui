@@ -20,14 +20,14 @@ function HeaderComponent() {
 				<ul className="navbar-nav">
 					{isLoggedIn && (
 						<li>
-							<Link to="/welcome/SanjaySaravanan" className="nav-link">
+							<Link to="/todoapp/welcome/sanjaysaravanan" className="nav-link">
 								Home
 							</Link>
 						</li>
 					)}
 					{isLoggedIn && (
 						<li>
-							<Link to="/todos" className="nav-link">
+							<Link to="/todoapp/todos" className="nav-link">
 								ToDos
 							</Link>
 						</li>

@@ -37,7 +37,7 @@ function LoginComponent() {
 				{hasLoginFailed && (
 					<div className="alert alert-warning">Invalid Credentials...</div>
 				)}
-				{isLoggedIn && <Redirect to={`/welcome/${userName}`} />}
+				{isLoggedIn && <Redirect to={`/todoapp/welcome/${userName}`} />}
 				User Name:{" "}
 				<input
 					type="text"
