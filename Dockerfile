@@ -22,18 +22,5 @@ COPY --from=build /app/build /usr/share/nginx/html
 # Default port exposure
 EXPOSE 80
 
-# Initialize environment variables into filesystem
-# WORKDIR /usr/share/nginx/html
-# COPY ./env.sh .
-# COPY .env .
-
-# # Add bash
-# RUN apk add --no-cache bash
-
-# # Run script which initializes env vars to fs
-# RUN chmod +x env.sh
-
-# ENV REACT_APP_ONB_API_SERVER_URL http://onboarding-api.nov.altimetrik.io
-
 # Start Nginx server
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
